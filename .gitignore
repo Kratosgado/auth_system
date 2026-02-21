@@ -1,0 +1,48 @@
+# PHP Authentication System - Git Ignore File
+
+# Configuration files with sensitive data
+config/config.php
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+.php-cs-fixer.dist.php
+
+# PHP
+*.log
+vendor/
+composer.lock
+.env
+
+# Session files
+sessions/
+tmp/
+
+# User uploaded files (if any)
+uploads/
+
+# Backup files
+*.bak
+*.backup
+*.sql.gz
+*.sql.zip
+
+# Cache
+cache/
+*.cache
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# Old files from previous structure
+old/
