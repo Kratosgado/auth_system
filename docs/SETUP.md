@@ -9,14 +9,14 @@ Follow these steps to get the authentication system up and running:
 mysql -u root -p
 
 # Create the database
-CREATE DATABASE auth_system;
+CREATE DATABASE auth_system_db;
 
 # Import the schema
-USE auth_system;
+USE auth_system_db;
 SOURCE database.sql;
 
 # Or import via command line
-mysql -u root -p auth_system < database.sql
+mysql -u root -p auth_system_db < database.sql
 ```
 
 ## Step 2: Configure the Application
@@ -30,9 +30,10 @@ nano config.php  # or use your preferred editor
 ```
 
 Update these values in `config.php`:
+
 - `DB_USER`: Your MySQL username
 - `DB_PASS`: Your MySQL password
-- `SITE_URL`: Your site URL (e.g., http://localhost/auth_system)
+- `SITE_URL`: Your site URL (e.g., <http://localhost/auth_system_db>)
 
 ## Step 3: Set Permissions
 
@@ -45,15 +46,16 @@ chmod 755 .
 ## Step 4: Test the System
 
 1. Open your browser and navigate to:
+
    ```
-   http://localhost/auth_system
+   http://localhost/auth_system_db
    ```
 
 2. You should be redirected to the login page
 
 3. Click "Register here" to create a test account:
    - Username: testuser
-   - Email: test@example.com
+   - Email: <test@example.com>
    - Password: Test123!@# (meets all requirements)
 
 4. After registration, login with your credentials
@@ -68,16 +70,19 @@ chmod 755 .
 ## Common Issues
 
 ### "Database connection failed"
+
 - Check MySQL is running: `sudo service mysql status`
 - Verify credentials in `config.php`
 - Ensure database exists: `SHOW DATABASES;`
 
 ### "Page not found" or 404 errors
+
 - Check your web server is running
 - Verify SITE_URL in config.php matches your actual URL
 - Ensure files are in correct directory
 
 ### Session issues
+
 - Check PHP sessions are enabled: `php -i | grep session`
 - Verify session directory is writable
 
@@ -104,6 +109,7 @@ chmod 755 .
 ## Security Reminders
 
 For Production:
+
 - [ ] Set `display_errors` to 0 in config.php
 - [ ] Enable HTTPS
 - [ ] Set `session.cookie_secure` to 1

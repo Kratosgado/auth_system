@@ -12,14 +12,14 @@
 define('BASE_PATH', dirname(__DIR__));
 
 // Database configuration constants
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'auth_system');
-define('DB_USER', 'root');  // TODO: Change this to your database username
-define('DB_PASS', '');      // TODO: Change this to your database password
+define('DB_HOST', 'localhost:8000');
+define('DB_NAME', 'auth_system_db');
+define('DB_USER', 'root');  
+define('DB_PASS', '');     
 define('DB_CHARSET', 'utf8mb4');
 
 // Application configuration
-define('SITE_URL', 'http://localhost/auth_system'); // TODO: Update with your site URL
+define('SITE_URL', 'http://localhost/auth_system'); 
 define('SESSION_LIFETIME', 3600); // 1 hour in seconds
 define('PASSWORD_RESET_EXPIRY', 3600); // 1 hour in seconds
 define('MAX_LOGIN_ATTEMPTS', 5);
@@ -28,11 +28,11 @@ define('LOGIN_ATTEMPT_WINDOW', 900); // 15 minutes in seconds
 // Security settings
 ini_set('session.cookie_httponly', 1);
 ini_set('session.use_only_cookies', 1);
-ini_set('session.cookie_secure', 0); // TODO: Set to 1 in production if using HTTPS
+ini_set('session.cookie_secure', 0); //  Set to 1 in production if using HTTPS
 ini_set('session.cookie_samesite', 'Strict');
 
 // Error reporting
-// TODO: Set to 0 in production
+//Set to 0 in production
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 

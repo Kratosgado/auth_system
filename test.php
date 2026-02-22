@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Installation Test Script
  * Run this file to verify your setup is correct
@@ -114,7 +115,6 @@ if ($_SERVER['SERVER_NAME'] !== 'localhost' && $_SERVER['SERVER_NAME'] !== '127.
         $passCount = 0;
         $failCount = 0;
         $warningCount = 0;
-        
         // Test 1: PHP Version
         $phpVersion = phpversion();
         $phpTest = version_compare($phpVersion, '7.4.0', '>=');
@@ -124,7 +124,6 @@ if ($_SERVER['SERVER_NAME'] !== 'localhost' && $_SERVER['SERVER_NAME'] !== '127.
             'message' => "PHP $phpVersion" . ($phpTest ? ' (OK)' : ' (Minimum 7.4 required)'),
             'details' => $phpTest ? 'Your PHP version is compatible.' : 'Please upgrade to PHP 7.4 or higher.'
         ];
-        
         // Test 2: PDO MySQL Extension
         $pdoTest = extension_loaded('pdo_mysql');
         $tests[] = [
@@ -133,9 +132,8 @@ if ($_SERVER['SERVER_NAME'] !== 'localhost' && $_SERVER['SERVER_NAME'] !== '127.
             'message' => $pdoTest ? 'PDO MySQL is enabled' : 'PDO MySQL is not enabled',
             'details' => $pdoTest ? 'Database connectivity is available.' : 'Enable pdo_mysql extension in php.ini'
         ];
-        
         // Test 3: Config File
-        $configTest = file_exists('config.php');
+        $configTest = file_exists('config/config.php');
         $tests[] = [
             'name' => 'Configuration File',
             'status' => $configTest ? 'pass' : 'fail',
@@ -145,8 +143,8 @@ if ($_SERVER['SERVER_NAME'] !== 'localhost' && $_SERVER['SERVER_NAME'] !== '127.
         
         // Test 4: Database Connection
         if ($configTest) {
-            require_once 'config.php';
-            require_once 'database.php';
+            require_once 'config/config.php';
+            require_once 'includes/database.php';
             
             try {
                 $db = Database::getInstance()->getConnection();
@@ -202,7 +200,7 @@ if ($_SERVER['SERVER_NAME'] !== 'localhost' && $_SERVER['SERVER_NAME'] !== '127.
         ];
         
         // Test 7: Required Files
-        $requiredFiles = ['utils.php', 'database.php', 'register.php', 'login.php', 'dashboard.php', 'style.css'];
+        $requiredFiles = ['includes/utils.php', 'includes/database.php', 'pages/auth/register.php', 'pages/auth/login.php', 'pages/user/dashboard.php', 'public/assets/css/style.css'];
         $missingFiles = [];
         
         foreach ($requiredFiles as $file) {
@@ -273,7 +271,7 @@ if ($_SERVER['SERVER_NAME'] !== 'localhost' && $_SERVER['SERVER_NAME'] !== '127.
             echo "<h3>Next Steps</h3>";
             echo "<ol>";
             echo "<li>Delete or secure this test file (<code>test.php</code>)</li>";
-            echo "<li>Visit <a href='register.php'>register.php</a> to create your first account</li>";
+            echo "<li>Visit <a href='pages/auth/register.php'>register.php</a> to create your first account</li>";
             echo "<li>Test the login functionality at <a href='login.php'>login.php</a></li>";
             echo "<li>Review <a href='SETUP.md'>SETUP.md</a> for detailed configuration</li>";
             echo "<li>Read <a href='README.md'>README.md</a> for complete documentation</li>";

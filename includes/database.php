@@ -1,10 +1,12 @@
 <?php
+
 /**
  * Database Connection Class
  * Handles all database operations using PDO with prepared statements
  */
 
 require_once __DIR__ . '/../config/config.php';
+
 
 class Database {
     private $conn = null;
@@ -26,7 +28,7 @@ class Database {
             $this->conn = new PDO($dsn, DB_USER, DB_PASS, $options);
         } catch (PDOException $e) {
             error_log("Database Connection Error: " . $e->getMessage());
-            throw new Exception("Database connection failed. Please try again later.");
+            throw new Exception("Database connection failed. Please try again later.\n" . $e->getMessage());
         }
     }
     
