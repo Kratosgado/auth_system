@@ -19,7 +19,7 @@ define('DB_PASS', '');
 define('DB_CHARSET', 'utf8mb4');
 
 // Application configuration
-define('SITE_URL', 'http://localhost/auth_system'); 
+define('SITE_URL', 'http://localhost:8000');
 define('SESSION_LIFETIME', 3600); // 1 hour in seconds
 define('PASSWORD_RESET_EXPIRY', 3600); // 1 hour in seconds
 define('MAX_LOGIN_ATTEMPTS', 5);

@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     
                     // In a real application, send this link via email
                     // For now, we'll just show it (NEVER do this in production!)
-                    $resetLink = SITE_URL . "/pages/auth/reset-password.php?token=" . $token;
+                    $resetLink = "http://localhost:8000/pages/auth/reset-password.php?token=" . $token;
                     
                     // For demonstration purposes only - remove in production
                     $_SESSION['demo_reset_link'] = $resetLink;
