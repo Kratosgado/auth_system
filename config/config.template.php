@@ -12,7 +12,7 @@
 define('BASE_PATH', dirname(__DIR__));
 
 // Database configuration constants
-define('DB_HOST', 'localhost:8000');
+define('DB_HOST', 'localhost');
 define('DB_NAME', 'auth_system_db');
 define('DB_USER', 'root');  
 define('DB_PASS', '');     

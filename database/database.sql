@@ -1,7 +1,7 @@
 -- Database: auth_system
 -- This file contains the database schema for the user authentication system
 
-CREATE DATABASE IF NOT EXISTS auth_system;
+CREATE DATABASE IF NOT EXISTS auth_system_db;
 USE auth_system;
 
 -- Users table
